@@ -1,11 +1,12 @@
 # API for a search engine
-An API written in Scala used to implement basic functionality of a search engine.
+An API written in Scala used to implement basic functionality of a search engine. Searches/Results are retained in the database and analytics are processed on-the-fly; all queries are processed by DuckDuckGo's [Instant Answer API](https://duckduckgo.com/api).
 
 
 ## Install instructions:
 1. Docker and SBT are required to be installed and on your PATH.
   * If using Windows/Mac, the DOCKER_HOST env variable needs to be set, if it isn't already set:
-    1. ```docker-machine ip %MACHINE_NAME_HERE%```
+    1. 
+    ```docker-machine ip %MACHINE_NAME_HERE%```
     
     2. Set the env variable for the result of that command with:
     ```export DOCKER_HOST=XXX.XXX.XXX.XXX```
@@ -50,12 +51,11 @@ An API written in Scala used to implement basic functionality of a search engine
       curl -H "Content-Type: application/json" -X POST -d '{"username":"brandon","oldPassword":"hunter2", "newPassword": "betterpass"}' http://localhost:8080/change_password
       ```
   * POST /most_common_search
+    * Finds most ocmmon search for an individual user.
     * Example:
     
       ```
       curl -H "Content-Type: application/json" -X POST -d '{"username":"brandon","password":"betterpass"}' http://localhost:8080/most_common_search
       ```
- 
-Aggregate information about the searches are also available.
 
 Created by Brandon Annin
